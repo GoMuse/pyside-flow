@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>550</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PySide Flow Button</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="titleLabel">
+      <property name="text">
+       <string>Buttons</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="class" stdset="0">
+       <string>displayMedium</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <!-- Headers -->
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_0_0">
+        <property name="text">
+         <string>Text Only</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="class" stdset="0">
+         <string>labelLarge</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="lbl_0_1">
+        <property name="text">
+         <string>With Icon</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="class" stdset="0">
+         <string>labelLarge</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="lbl_0_2">
+        <property name="text">
+         <string>Disabled</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="class" stdset="0">
+         <string>labelLarge</string>
+        </property>
+       </widget>
+      </item>
+      
+      <!-- Elevated -->
+      <item row="1" column="0">
+       <widget class="QPushButton" name="btn_elevated_text">
+        <property name="text">
+         <string>Elevated</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>elevated</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="btn_elevated_icon">
+        <property name="text">
+         <string>Elevated</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>elevated</string>
+        </property>
+        <property name="iconName" stdset="0">
+         <string>camera</string>
+        </property>
+        <property name="iconStyle" stdset="0">
+         <string>rounded</string>
+        </property>
+        <property name="iconFill" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="btn_elevated_disabled">
+        <property name="text">
+         <string>Elevated</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>elevated</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+
+      <!-- Filled -->
+      <item row="2" column="0">
+       <widget class="QPushButton" name="btn_filled_text">
+        <property name="text">
+         <string>Filled</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>filled</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="btn_filled_icon">
+        <property name="text">
+         <string>Filled</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>filled</string>
+        </property>
+        <property name="iconName" stdset="0">
+         <string>camera</string>
+        </property>
+        <property name="iconStyle" stdset="0">
+         <string>sharp</string>
+        </property>
+        <property name="iconFill" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="btn_filled_disabled">
+        <property name="text">
+         <string>Filled</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>filled</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+
+      <!-- Filled Tonal -->
+      <item row="3" column="0">
+       <widget class="QPushButton" name="btn_filledTonal_text">
+        <property name="text">
+         <string>Filled Tonal</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>filledTonal</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="btn_filledTonal_icon">
+        <property name="text">
+         <string>Filled Tonal</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>filledTonal</string>
+        </property>
+        <property name="iconName" stdset="0">
+         <string>palette</string>
+        </property>
+        <property name="iconStyle" stdset="0">
+         <string>outlined</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="btn_filledTonal_disabled">
+        <property name="text">
+         <string>Filled Tonal</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>filledTonal</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+
+      <!-- Outlined -->
+      <item row="4" column="0">
+       <widget class="QPushButton" name="btn_outlined_text">
+        <property name="text">
+         <string>Outlined</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>outlined</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="btn_outlined_icon">
+        <property name="text">
+         <string>Outlined</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>outlined</string>
+        </property>
+        <property name="iconName" stdset="0">
+         <string>home</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="btn_outlined_disabled">
+        <property name="text">
+         <string>Outlined</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>outlined</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+
+      <!-- Text -->
+      <item row="5" column="0">
+       <widget class="QPushButton" name="btn_text_text">
+        <property name="text">
+         <string>Text</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>text</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QPushButton" name="btn_text_icon">
+        <property name="text">
+         <string>Text</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>text</string>
+        </property>
+        <property name="iconName" stdset="0">
+         <string>settings</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QPushButton" name="btn_text_disabled">
+        <property name="text">
+         <string>Text</string>
+        </property>
+        <property name="type" stdset="0">
+         <string>text</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,157 @@
+* {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+QWidget {
+    background-color: {{ scheme.background }};
+    color: {{ scheme.onBackground }};
+}
+
+/* ============================================================
+   Buttons - Material Design 3
+   ============================================================ */
+
+/* Common properties for all buttons */
+QPushButton {
+    border-radius: {{ shape.cornerFull }}px;
+    padding: 0px 24px;
+    min-height: 40px;
+    min-width: 48px;
+    font-family: {{ typography.labelLarge.family }};
+    font-size: {{ typography.labelLarge.size }}px;
+    font-weight: {{ typography.labelLarge.weight }};
+}
+
+QPushButton[hasIcon="true"] {
+    padding-left: 16px;
+    padding-right: 24px;
+}
+
+/* 1. Filled Button (Default) */
+QPushButton, QPushButton[type="filled"] {
+    background-color: {{ scheme.primary }};
+    color: {{ scheme.onPrimary }};
+    border: none;
+}
+QPushButton:hover, QPushButton[type="filled"]:hover {
+    background-color: {{ blend_colors(scheme.primary, scheme.onPrimary, state.hoverStateLayerOpacity) }};
+}
+QPushButton:pressed, QPushButton[type="filled"]:pressed {
+    background-color: {{ blend_colors(scheme.primary, scheme.onPrimary, state.pressedStateLayerOpacity) }};
+}
+QPushButton:disabled, QPushButton[type="filled"]:disabled {
+    background-color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.12) }};
+    color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.38) }};
+}
+
+/* 2. Filled Tonal Button */
+QPushButton[type="filledTonal"] {
+    background-color: {{ scheme.secondaryContainer }};
+    color: {{ scheme.onSecondaryContainer }};
+    border: none;
+}
+QPushButton[type="filledTonal"]:hover {
+    background-color: {{ blend_colors(scheme.secondaryContainer, scheme.onSecondaryContainer, state.hoverStateLayerOpacity) }};
+}
+QPushButton[type="filledTonal"]:pressed {
+    background-color: {{ blend_colors(scheme.secondaryContainer, scheme.onSecondaryContainer, state.pressedStateLayerOpacity) }};
+}
+QPushButton[type="filledTonal"]:disabled {
+    background-color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.12) }};
+    color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.38) }};
+}
+
+/* 3. Elevated Button */
+QPushButton[type="elevated"] {
+    background-color: {{ scheme.surfaceContainerLow }};
+    color: {{ scheme.primary }};
+    border: none;
+}
+QPushButton[type="elevated"]:hover {
+    background-color: {{ blend_colors(scheme.surfaceContainerLow, scheme.primary, state.hoverStateLayerOpacity) }};
+}
+QPushButton[type="elevated"]:pressed {
+    background-color: {{ blend_colors(scheme.surfaceContainerLow, scheme.primary, state.pressedStateLayerOpacity) }};
+}
+QPushButton[type="elevated"]:disabled {
+    background-color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.12) }};
+    color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.38) }};
+}
+
+/* 4. Outlined Button */
+QPushButton[type="outlined"] {
+    background-color: transparent;
+    color: {{ scheme.primary }};
+    border: 1px solid {{ scheme.outline }};
+}
+QPushButton[type="outlined"]:hover {
+    background-color: {{ blend_colors(scheme.surface, scheme.primary, state.hoverStateLayerOpacity) }};
+}
+QPushButton[type="outlined"]:pressed {
+    background-color: {{ blend_colors(scheme.surface, scheme.primary, state.pressedStateLayerOpacity) }};
+}
+QPushButton[type="outlined"]:disabled {
+    background-color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.12) }};
+    color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.38) }};
+    border: 1px solid {{ blend_colors(scheme.surface, scheme.onSurface, 0.12) }};
+}
+
+/* 5. Text Button */
+QPushButton[type="text"] {
+    background-color: transparent;
+    color: {{ scheme.primary }};
+    border: none;
+    padding: 0px 12px; /* Text buttons usually have less padding */
+}
+QPushButton[type="text"]:hover {
+    background-color: {{ blend_colors(scheme.surface, scheme.primary, state.hoverStateLayerOpacity) }};
+}
+QPushButton[type="text"]:pressed {
+    background-color: {{ blend_colors(scheme.surface, scheme.primary, state.pressedStateLayerOpacity) }};
+}
+QPushButton[type="text"]:disabled {
+    background-color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.12) }};
+    color: {{ blend_colors(scheme.surface, scheme.onSurface, 0.38) }};
+}
+
+QLineEdit {
+    background-color: {{ scheme.surface }};
+    color: {{ scheme.onSurface }};
+
+    border: 1px solid {{ scheme.outline }};
+    border-radius: {{ shape.cornerExtraSmall }}px;
+    padding: 8px;
+}
+
+/* ============================================================
+   Typography - Material Design 3
+   Usage in PySide6: widget.setProperty("class", "displayLarge")
+   ============================================================ */
+
+/* Display */
+*[class~="displayLarge"] { font-family: "Roboto"; font-size: 57px; font-weight: 400; letter-spacing: -0.25px; }
+*[class~="displayMedium"] { font-family: "Roboto"; font-size: 45px; font-weight: 400; letter-spacing: 0px; }
+*[class~="displaySmall"] { font-family: "Roboto"; font-size: 36px; font-weight: 400; letter-spacing: 0px; }
+
+/* Headline */
+*[class~="headlineLarge"] { font-family: "Roboto"; font-size: 32px; font-weight: 400; letter-spacing: 0px; }
+*[class~="headlineMedium"] { font-family: "Roboto"; font-size: 28px; font-weight: 400; letter-spacing: 0px; }
+*[class~="headlineSmall"] { font-family: "Roboto"; font-size: 24px; font-weight: 400; letter-spacing: 0px; }
+
+/* Title */
+*[class~="titleLarge"] { font-family: "Roboto"; font-size: 22px; font-weight: 400; letter-spacing: 0px; }
+*[class~="titleMedium"] { font-family: "Roboto"; font-size: 16px; font-weight: 500; letter-spacing: 0.15px; }
+*[class~="titleSmall"] { font-family: "Roboto"; font-size: 14px; font-weight: 500; letter-spacing: 0.1px; }
+
+/* Label */
+*[class~="labelLarge"] { font-family: "Roboto"; font-size: 14px; font-weight: 500; letter-spacing: 0.1px; }
+*[class~="labelMedium"] { font-family: "Roboto"; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; }
+*[class~="labelSmall"] { font-family: "Roboto"; font-size: 11px; font-weight: 500; letter-spacing: 0.5px; }
+
+/* Body */
+*[class~="bodyLarge"] { font-family: "Roboto"; font-size: 16px; font-weight: 400; letter-spacing: 0.5px; }
+*[class~="bodyMedium"] { font-family: "Roboto"; font-size: 14px; font-weight: 400; letter-spacing: 0.25px; }
+*[class~="bodySmall"] { font-family: "Roboto"; font-size: 12px; font-weight: 400; letter-spacing: 0.4px; }

@@ -1,0 +1,191 @@
+# ============================================================
+# SISTEMA DE CONSTRUCCIÓN (Define la herramienta utilizada para generar el paquete.)
+# ============================================================
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+
+# ============================================================
+# INFORMACIÓN PRINCIPAL DEL PROYECTO (Estos datos aparecerán en PyPI.)
+# ============================================================
+
+[project]
+name = "pyside-flow"
+version = "0.1.0"
+
+description = "A modern styling and theming framework for PySide applications."
+readme = "README.md"
+
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+authors = [{ name = "Christopher Nuñez", email = "christopher@bugcodex.com" }]
+
+maintainers = [
+    { name = "Christopher Nuñez", email = "christopher@bugcodex.com" },
+]
+
+
+# ============================================================
+# PALABRAS CLAVE (Ayudan a encontrar el proyecto en PyPI.)
+# ============================================================
+
+keywords = [
+    "pyside",
+    "pyside6",
+    "qt",
+    "gui",
+    "material-design",
+    "theme",
+    "stylesheet",
+    "qss",
+    "widgets",
+    "desktop",
+]
+
+
+# ============================================================
+# CLASIFICADORES DE PYPI (Describen el estado y la compatibilidad del proyecto.)
+# ============================================================
+
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+
+    "Intended Audience :: Developers",
+
+    "License :: OSI Approved :: MIT License",
+
+    "Operating System :: OS Independent",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: User Interfaces",
+]
+
+
+# ============================================================
+# DEPENDENCIAS PRINCIPALES (Se instalan automáticamente junto con pyside-flow.)
+# ============================================================
+
+dependencies = [
+    "darkdetect>=0.8.0",
+    "Jinja2",
+    "materialyoucolor",
+    "pydantic>=2.13.4",
+    "pyside6>=6.11.1",
+    "qt-material-icons>=0.5.0",
+]
+
+
+# ============================================================
+# DEPENDENCIAS OPCIONALES (No se instalan en una instalación normal.)
+# ============================================================
+
+[project.optional-dependencies]
+
+
+dev = [
+    "build>=1.2",        # libreria para construir el proyecto.
+    "pytest>=9.1.1",     # libreria para ejecutar los tests.
+    "pytest-cov>=7.1.0", # libreria para ejecutar los tests.
+    "pytest-qt>=4.2.0",  # qtbot fixture para testear widgets Qt.
+    "ruff>=0.9",         # libreria para formatear el codigo.
+    "ty>=0.0.1",         # libreria para analizar el codigo.
+    "twine>=6.0",        # libreria para publicar el proyecto.
+]
+
+# Herramientas para crear la documentación.
+docs = ["mkdocs>=1.6", "mkdocs-material>=9.5", "mkdocstrings[python]>=0.27"]
+
+
+# ============================================================
+# ENLACES DEL PROYECTO (Se mostrarán en la página de PyPI.)
+# ============================================================
+
+[project.urls]
+Homepage = "https://github.com/bugcodex/pyside-flow"
+Documentation = "https://bugcodex.github.io/pyside-flow/"
+Repository = "https://github.com/bugcodex/pyside-flow"
+Issues = "https://github.com/bugcodex/pyside-flow/issues"
+
+
+# ============================================================
+# CONFIGURACIÓN DE HATCHLING (Indica qué paquete Python debe incluirse en la distribución.)
+# ============================================================
+
+[tool.hatch.build.targets.wheel]
+packages = ["pysideflow"]
+
+
+# ============================================================
+# CONFIGURACIÓN DE PYTEST (Test)
+# ============================================================
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+addopts = ["-ra", "--strict-markers", "--strict-config"]
+
+
+# ============================================================
+# CONFIGURACIÓN GENERAL DE RUFF (Analysis and formatting tool)
+# ============================================================
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+src = ["pysideflow", "tests"]
+
+
+# ============================================================
+# REGLAS DE RUFF
+# ============================================================
+
+[tool.ruff.lint]
+select = [
+    "D",   # pydocstyle
+    "F",   # Pyflakes
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "C4",  # flake8-comprehensions
+]
+
+ignore = [
+    "E501",   # Line too long (226 > 200)
+    "D104",   # Missing public module docstring
+    "D202",   # No summary line too long
+    "D100",   # Missing module docstring
+    "F403",   # Import * not allowed
+    "SIM102", # Nested ifs sometimes better
+    "COM812", # Trailing comma (conflicts with formatter)
+    "ISC001", # Implicit string concatenation (conflicts with formatter)
+]
+
+# ============================================================
+# FORMATEADOR DE RUFF
+# ============================================================
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+
+# ============================================================
+# CONFIGURACIÓN DE TY (Analyze type hints)
+# ============================================================
+
+[tool.ty.environment]
+python-version = "3.10"
