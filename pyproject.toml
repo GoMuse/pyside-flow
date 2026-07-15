@@ -110,10 +110,10 @@ docs = ["mkdocs>=1.6", "mkdocs-material>=9.5", "mkdocstrings[python]>=0.27"]
 # ============================================================
 
 [project.urls]
-Homepage = "https://github.com/bugcodex/pyside-flow"
-Documentation = "https://bugcodex.github.io/pyside-flow/"
-Repository = "https://github.com/bugcodex/pyside-flow"
-Issues = "https://github.com/bugcodex/pyside-flow/issues"
+Homepage = "https://github.com/GoMuse/pyside-flow"
+Documentation = "https://GoMuse.github.io/pyside-flow/"
+Repository = "https://github.com/GoMuse/pyside-flow"
+Issues = "https://github.com/GoMuse/pyside-flow/issues"
 
 
 # ============================================================
